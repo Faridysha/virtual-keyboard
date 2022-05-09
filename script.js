@@ -1,7 +1,7 @@
 let keyboard = document.createElement('div');
 keyboard.className = 'klava';
 
-let input = document.createElement('div');
+let input = document.createElement('textarea');
 input.id = 'vvod';
 
 let all_bykvi_zero = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'];
@@ -13,7 +13,7 @@ let element0 = all_bykvi_zero.map(bykva => {
   button.innerText = bykva;
   button.className = 'bykvi';
   button.addEventListener('click', function() {
-    input.innerText += bykva;
+    input.innerHTML += bykva;
     button.classList.add('active');
   });
   return button;
@@ -30,7 +30,7 @@ let element1 = all_bykvi_first.map(bykva => {
   button.innerText = bykva;
   button.className = 'bykvi';
   button.addEventListener('click', function() {
-    input.innerText += bykva;
+    input.innerHTML += bykva;
     button.classList.add('active');
   });
   return button;
@@ -46,7 +46,7 @@ let element2 = all_bykvi_second.map(bykva => {
   button.innerText = bykva;
   button.className = 'bykvi';
   button.addEventListener('click', function() {
-    input.innerText += bykva;
+    input.innerHTML += bykva;
     button.classList.add('active');
   });
   return button;
@@ -62,7 +62,7 @@ let element3 = all_bykvi_third.map(bykva => {
   button.innerText = bykva;
   button.className = 'bykvi';
   button.addEventListener('click', function() {
-    input.innerText += bykva;
+    input.innerHTML += bykva;
     button.classList.add('active');
   });
   return button;
@@ -80,7 +80,7 @@ let element4 = all_bykvi_fourth.map(bykva => {
   button.innerText = bykva;
   button.className = 'bykvi';
   button.addEventListener('click', function() {
-    input.innerText += bykva;
+    input.innerHTML += bykva;
     button.classList.add('active');
     //button.classList.remove('active');
   });
@@ -99,16 +99,23 @@ keyboard.append(klava_row_zero, klava_row_first, klava_row_second, klava_row_thi
 document.body.append(input, keyboard);
 
 document.onkeydown = function(event) {
-  console.log(event.key);
-  input.innerText += event.key;
+  input.innerHTML += event.key;
   let light = document.getElementById(event.key);
   light.classList.add('active');
 }
 document.onkeyup = function(event) {
-  console.log(event.key);
-  let lightremove = document.getElementById(event.key);
-  lightremove.classList.remove('active');
+  let lightremove = document.querySelectorAll('.active');
+  lightremove.forEach(function(active) {
+    active.classList.remove('active');
+  })
 }
+keyboard.onmouseup = function(event) {
+  let lightremove = document.querySelectorAll('.active'); 
+  lightremove.forEach(function(active) {
+    active.classList.remove('active');
+  })
+}
+
 
 
 

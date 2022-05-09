@@ -41,3 +41,6 @@
 .active {
   background-color: bisque;
 }
+textarea {
+  min-width: 800px;
+}
