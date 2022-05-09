@@ -1,0 +1,43 @@
+.bykvi {
+  border: 2px solid pink;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#vvod {
+  height: 100px;
+  border: 1px solid pink;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+
+}
+.row {
+  display: flex;
+}
+
+#Backspace, #CapsLock {
+  width: 110px;
+}
+#Enter {
+  width: 94px;
+}
+#Tab {
+  width: 56px;
+}
+#Ctrl {
+  width: 60px;
+}
+#Space {
+  width: 340px;
+}
+.ShiftL {
+  width: 110px;
+}
+.active {
+  background-color: bisque;
+}
